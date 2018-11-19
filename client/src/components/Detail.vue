@@ -6,7 +6,7 @@
         <p>{{ article.author.name }}</p>
         <p class="ml-5">{{ article.timestamp }}</p>
       </div>
-      <p v-for="(paragraph, index) in article.content" :key="index">{{ paragraph }}</p>
+      <p>{{ article.content }}</p>
     </div>
     <div class="comment">
       <Comment/>
@@ -33,7 +33,6 @@ export default {
     })
       .then(response => {
         this.article = response.data
-        this.article.content = this.article.content.split('\n')
       })
       .catch(error => {
         console.log(error)
