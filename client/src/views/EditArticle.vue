@@ -25,7 +25,7 @@ export default {
   methods: {
     init () {
       axios({
-        url: `http://localhost:3000/article/${this.$route.params.id}`,
+        url: `http://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
         method: 'get'
       })
         .then(response => {
@@ -38,7 +38,7 @@ export default {
     },
     updateArticle () {
       axios({
-        url: `http://localhost:3000/article`,
+        url: `http://blog-engine-server.pemmz-palzu.site/article`,
         method: 'put',
         data: {
           title: this.title,

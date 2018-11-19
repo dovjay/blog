@@ -25,7 +25,7 @@ export default {
   methods: {
     saveArticle () {
       axios({
-        url: 'http://localhost:3000/article',
+        url: 'http://blog-engine-server.pemmz-palzu.site/article',
         method: 'post',
         data: {
           title: this.title,

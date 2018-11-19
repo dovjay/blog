@@ -19,7 +19,7 @@ export default {
     addComment () {
       if (localStorage.getItem('token')) {
         axios({
-          url: 'http://localhost:3000/comment',
+          url: 'http://blog-engine-server.pemmz-palzu.site/comment',
           method: 'post',
           data: {
             content: this.comment,

@@ -28,7 +28,7 @@ export default {
   },
   mounted () {
     axios({
-      url: `http://localhost:3000/article/${this.$route.params.id}`,
+      url: `http://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
       method: 'get'
     })
       .then(response => {
@@ -42,7 +42,7 @@ export default {
   watch: {
     '$route.params.id' () {
       axios({
-        url: `http://localhost:3000/article/${this.$route.params.id}`,
+        url: `http://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
         method: 'get'
       })
         .then(response => {

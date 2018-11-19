@@ -20,7 +20,7 @@ export default {
   },
   created () {
     axios({
-      url: 'http://localhost:3000/article',
+      url: 'http://blog-engine-server.pemmz-palzu.site/article',
       method: 'get'
     })
       .then(response => {

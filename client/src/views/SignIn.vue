@@ -27,7 +27,7 @@ export default {
   methods: {
     signIn () {
       axios({
-        url: 'http://localhost:3000/user/signin',
+        url: 'http://blog-engine-server.pemmz-palzu.site/user/signin',
         method: 'post',
         data: {
           email: this.email,

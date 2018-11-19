@@ -29,7 +29,7 @@ export default {
   methods: {
     getArticle () {
       axios({
-        url: 'http://localhost:3000/article/me',
+        url: 'http://blog-engine-server.pemmz-palzu.site/article/me',
         method: 'get',
         headers: { token: localStorage.getItem('token') }
       })
