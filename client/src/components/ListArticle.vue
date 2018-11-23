@@ -18,18 +18,23 @@ export default {
       listArticle: []
     }
   },
-  created () {
-    axios({
-      url: 'http://blog-engine-server.pemmz-palzu.site/article',
-      method: 'get'
-    })
-      .then(response => {
-        this.listArticle = response.data.reverse()
-        console.log(response)
+  methods: {
+    getArticleList () {
+      axios({
+        url: 'https://blog-engine-server.pemmz-palzu.site/article',
+        method: 'get'
       })
-      .catch(error => {
-        console.log(error)
-      })
+        .then(response => {
+          this.listArticle = response.data.reverse()
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+  },
+  mounted () {
+    this.getArticleList()
   }
 }
 </script>

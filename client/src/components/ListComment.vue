@@ -25,7 +25,7 @@ export default {
   methods: {
     getComment () {
       axios({
-        url: 'http://blog-engine-server.pemmz-palzu.site/comment',
+        url: 'https://blog-engine-server.pemmz-palzu.site/comment',
         method: 'get',
         headers: { articleId: this.$route.params.id }
       })
@@ -39,7 +39,7 @@ export default {
     deleteComment (id) {
       if (confirm('Are you sure want to delete this comment?')) {
         axios({
-          url: 'http://blog-engine-server.pemmz-palzu.site/comment',
+          url: 'https://blog-engine-server.pemmz-palzu.site/comment',
           method: 'delete',
           headers: { token: localStorage.getItem('token') },
           data: { id }

@@ -24,7 +24,7 @@ export default {
   methods: {
     getLatestArticle () {
       axios({
-        url: 'http://blog-engine-server.pemmz-palzu.site/article',
+        url: 'https://blog-engine-server.pemmz-palzu.site/article',
         method: 'get'
       })
         .then(response => {

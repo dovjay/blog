@@ -5,6 +5,7 @@
         <div>
           <h3><router-link :to="'/article/' + article._id">{{ article.title }}</router-link></h3>
           <div class="row text-muted">
+            <p>{{ article.author.name }}</p>
             <p class="ml-3">{{ article.timestamp }}</p>
           </div>
           <p>{{ article.content }}</p>
@@ -29,7 +30,7 @@ export default {
   methods: {
     getArticle () {
       axios({
-        url: 'http://blog-engine-server.pemmz-palzu.site/article/me',
+        url: 'https://blog-engine-server.pemmz-palzu.site/article/me',
         method: 'get',
         headers: { token: localStorage.getItem('token') }
       })
@@ -49,7 +50,7 @@ export default {
     deleteArticle(id) {
       if (confirm('Are you sure to delete this article?')) {
         axios({
-          url: `http://localhost:3000/article`,
+          url: `https://blog-engine-server.pemmz-palzu.site/article`,
           method: 'delete',
           headers: { token: localStorage.getItem('token') },
           data: { articleId: id }

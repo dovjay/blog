@@ -3,7 +3,7 @@
     <div class="article">
       <h1>{{ article.title }}</h1>
       <div class="row ml-2 text-muted">
-        <p>{{ article.author.name }}</p>
+        <p>{{ author }}</p>
         <p class="ml-5">{{ article.timestamp }}</p>
       </div>
       <p>{{ article.content }}</p>
@@ -23,16 +23,18 @@ export default {
   },  
   data () {
     return {
-      article: {}
+      article: {},
+      author: ''
     }
   },
-  mounted () {
+  created () {
     axios({
-      url: `http://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
+      url: `https://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
       method: 'get'
     })
       .then(response => {
         this.article = response.data
+        this.author = response.data.author.name
       })
       .catch(error => {
         console.log(error)
@@ -41,7 +43,7 @@ export default {
   watch: {
     '$route.params.id' () {
       axios({
-        url: `http://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
+        url: `https://blog-engine-server.pemmz-palzu.site/article/${this.$route.params.id}`,
         method: 'get'
       })
         .then(response => {

@@ -32,7 +32,7 @@ export default {
   methods: {
     signUp () {
       axios({
-        url: 'http://blog-engine-server.pemmz-palzu.site/user/signup',
+        url: 'https://blog-engine-server.pemmz-palzu.site/user/signup',
         method: 'post',
         data: {
           name: this.name,
